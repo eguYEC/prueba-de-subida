@@ -8,8 +8,8 @@ import { AcercadeComponent } from './pages/acercade/acercade.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
-//import { HttpClientModule } from '@angular/common/http';
-//import { TemplateComponent } from './pages/template/template.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TemplateComponent } from './pages/template/template.component';
 
 
 @NgModule({
@@ -20,13 +20,13 @@ import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
     NavbarComponent,
     FooterComponent,
     CapitalizadoPipe,
-   // TemplateComponent
+    TemplateComponent
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-    //HttpClientModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

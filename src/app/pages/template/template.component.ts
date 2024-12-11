@@ -1,5 +1,8 @@
-/*import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgForm, FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { PaisService } from '../../services/pais.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-template',
@@ -10,13 +13,14 @@ import { PaisService } from '../../services/pais.service';
 })
 export class TemplateComponent {
   paises: any[] = [];
-  constructor( private paisService: PaisService){}
+  constructor(private paisService: PaisService){}
   ngOnInit(): void{
-    .subscribe( paises => {
-      this.paises = paises;
+    this.paisService.getPaises()
+    .subscribe( paisesServicio => {
+      this.paises = paisesServicio;
       this.paises.unshift({nombre: '[ Seleccione Pais]',codigo: ''})
     });
   }
 
 
-}*/
+}
